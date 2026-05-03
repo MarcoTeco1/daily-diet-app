@@ -7,13 +7,16 @@ type StatusProps = {
 export const Container = styled.TouchableOpacity`
   width: 100%;
   min-height: 72px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radius.lg};
+ 
+  border: 1px solid ${({ theme }) => theme.colors.low_contrast};
+
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   flex-direction: row;
   align-items: center;
   padding: 0 18px;
   margin-bottom: 12px;
-  background-color: ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.ui_surface_white};
 
   shadow-color: #000;
   shadow-opacity: 0.03;
@@ -24,35 +27,40 @@ export const Container = styled.TouchableOpacity`
 export const Time = styled.Text`
   font-size: 13px;
   font-weight: 900;
-  color: ${({ theme }) => theme.colors.text};
+
+  color: #000000;
   margin-right: 12px;
 `;
 
 export const Divider = styled.View`
   width: 1px;
   height: 18px;
-  background-color: ${({ theme }) => theme.colors.gray200};
+
+  background-color: ${({ theme }) => theme.colors.low_contrast};
   margin-right: 12px;
 `;
 
 export const Title = styled.Text`
   flex: 1;
   font-size: 15px;
-  color: ${({ theme }) => theme.colors.textSecondary};
+ 
+  color: #333333;
 `;
 
 export const Status = styled.View<StatusProps>`
   width: 14px;
   height: 14px;
-  border-radius: 999px;
+  border-radius: 7px;
   margin-left: 12px;
 
   ${({ isOnDiet, theme }) =>
     isOnDiet
       ? css`
-          background-color: ${theme.colors.greenDark};
+       
+          background-color: ${theme.colors.status_positive};
         `
       : css`
-          background-color: ${theme.colors.redDark};
+     
+          background-color: ${theme.colors.status_negative};
         `}
 `;

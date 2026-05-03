@@ -85,12 +85,15 @@ export function MealDetails() {
   }
 
   if (loading) {
-    return (
-      <LoadingContainer>
-        <ActivityIndicator size="large" color={lightTheme.colors.greenDark} />
-      </LoadingContainer>
-    );
-  }
+  return (
+    <LoadingContainer>
+      <ActivityIndicator 
+        size="large" 
+        color={lightTheme.colors.status_positive} 
+      />
+    </LoadingContainer>
+  );
+}
 
   if (!meal) return null;
 
@@ -98,9 +101,9 @@ export function MealDetails() {
     <>
       <Container>
         <Header
-          title="Refeição"
-          variant={meal.isOnDiet ? "green" : "red"}
-        />
+  title="Refeição"
+  variant={meal.isOnDiet ? "green" : "red"}
+/>
 
         <Content>
           <Title>{meal.name}</Title>

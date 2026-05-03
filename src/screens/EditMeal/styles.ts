@@ -7,14 +7,15 @@ type DietButtonProps = {
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
+  /* ui_background é o seu novo azul escuro */
+  background-color: ${({ theme }) => theme.colors.ui_background};
 `;
 
 export const LoadingContainer = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.ui_background};
 `;
 
 export const Content = styled.View`
@@ -37,20 +38,22 @@ export const FlexField = styled(Field)`
 `;
 
 export const Label = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.md};
+  /* fontSize.md -> font.size_md */
+  font-size: ${({ theme }) => theme.font.size_md}px;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.high_contrast};
 `;
 
 export const Input = styled.TextInput`
   height: 52px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray200};
-  border-radius: ${({ theme }) => theme.radius.lg};
+  /* gray200 -> low_contrast | radius.lg -> shaping.radius_lg */
+  border-color: ${({ theme }) => theme.colors.low_contrast};
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   padding: 0 16px;
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  background-color: ${({ theme }) => theme.colors.ui_surface_white};
+  color: #000000;
+  font-size: ${({ theme }) => theme.font.size_md}px;
 `;
 
 export const TextArea = styled(Input)`
@@ -67,47 +70,47 @@ export const Row = styled.View`
 export const DietButton = styled.TouchableOpacity<DietButtonProps>`
   flex: 1;
   height: 52px;
-  border-radius: ${({ theme }) => theme.radius.lg};
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.gray200};
+  border-color: ${({ theme }) => theme.colors.low_contrast};
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.button_cream};
 
   ${({ isActive, variant, theme }) =>
     isActive &&
     variant === "green" &&
     css`
-      background-color: ${theme.colors.greenMid};
-      border-color: ${theme.colors.greenDark};
+      background-color: ${theme.colors.status_positive};
+      border-color: ${theme.colors.status_positive};
     `}
 
   ${({ isActive, variant, theme }) =>
     isActive &&
     variant === "red" &&
     css`
-      background-color: ${theme.colors.redMid};
-      border-color: ${theme.colors.redDark};
+      background-color: ${theme.colors.status_negative};
+      border-color: ${theme.colors.status_negative};
     `}
 `;
 
 export const DietText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.md};
+  font-size: ${({ theme }) => theme.font.size_md}px;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+  color: #000000;
 `;
 
 export const SaveButton = styled.TouchableOpacity`
   height: 54px;
-  background-color: ${({ theme }) => theme.colors.button};
-  border-radius: ${({ theme }) => theme.radius.lg};
+  background-color: ${({ theme }) => theme.colors.button_cream};
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   align-items: center;
   justify-content: center;
   margin-top: 24px;
 `;
 
 export const SaveButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.buttonText};
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  color: #000000;
+  font-size: ${({ theme }) => theme.font.size_md}px;
   font-weight: 800;
 `;

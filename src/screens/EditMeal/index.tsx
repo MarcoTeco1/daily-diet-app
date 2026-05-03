@@ -174,14 +174,16 @@ export function EditMeal() {
       Alert.alert("Editar refeição", "Não foi possível atualizar.");
     }
   }
-
-  if (loading) {
-    return (
-      <LoadingContainer>
-        <ActivityIndicator size="large" color={lightTheme.colors.greenDark} />
-      </LoadingContainer>
-    );
-  }
+if (loading) {
+  return (
+    <LoadingContainer>
+      <ActivityIndicator 
+        size="large" 
+        color={lightTheme.colors.status_positive} 
+      />
+    </LoadingContainer>
+  );
+}
 
   return (
     <Container>

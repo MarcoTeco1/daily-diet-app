@@ -2,33 +2,22 @@ import { colors } from "./colors"
 
 export const lightTheme = {
   colors,
-
-  radius: {
-    sm: "8px",
-    md: "12px",
-    lg: "14px",
-    xl: "18px",
-    xxl: "24px",
-    pill: "999px",
+  shaping: {
+    radius_sm: 8,
+    radius_lg: 24,
+    circle: 999,
   },
-
-  spacing: {
-    xs: "4px",
-    sm: "8px",
-    md: "12px",
-    lg: "16px",
-    xl: "20px",
-    xxl: "24px",
+  tokens: {
+    padding: 24,
+    section: 32,
+    gap: 12,
   },
-
-  fontSize: {
-    sm: "13px",
-    md: "14px",
-    lg: "15px",
-    xl: "18px",
-    xxl: "24px",
-    hero: "34px",
+  font: {
+    size_xs: 12,
+    size_md: 16,
+    size_lg: 24,
+    size_xl: 48,
   },
 } as const
 
-export const theme = lightTheme
+export const theme = lightTheme;

@@ -17,26 +17,30 @@ export const Container = styled.View<Props>`
   ${({ roundedBottom, theme }) =>
     roundedBottom &&
     css`
-      border-bottom-left-radius: ${theme.radius.xxl};
-      border-bottom-right-radius: ${theme.radius.xxl};
+     
+      border-bottom-left-radius: ${theme.shaping.radius_lg}px;
+      border-bottom-right-radius: ${theme.shaping.radius_lg}px;
     `}
 
   ${({ theme, variant }) =>
     variant === "green" &&
     css`
-      background-color: ${theme.colors.greenLight};
+ 
+      background-color: ${theme.colors.status_positive};
     `}
 
   ${({ theme, variant }) =>
     variant === "red" &&
     css`
-      background-color: ${theme.colors.redLight};
+
+      background-color: ${theme.colors.status_negative};
     `}
 
   ${({ theme, variant }) =>
     variant === "neutral" &&
     css`
-      background-color: ${theme.colors.gray100};
+      /* Mudado de gray100 para ui_background (seu azul escuro) */
+      background-color: ${theme.colors.ui_background};
     `}
 `;
 
@@ -48,15 +52,18 @@ export const BackButton = styled.TouchableOpacity`
 `;
 
 export const BackText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  /* Mudado de fontSize.lg para font.size_lg */
+  font-size: ${({ theme }) => theme.font.size_lg}px;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+
+  color: ${({ theme }) => theme.colors.high_contrast};
 `;
 
 export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.xl};
+
+  font-size: ${({ theme }) => theme.font.size_lg}px;
   font-weight: 900;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.high_contrast};
 `;
 
 export const Spacer = styled.View`

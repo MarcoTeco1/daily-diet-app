@@ -1,25 +1,19 @@
 export const colors = {
-  background: "#F7F8F8",
-  white: "#FFFFFF",
 
-  text: "#1B1D1E",
-  textSecondary: "#5C6265",
+  ui_background: "#0D1B2A", 
+  
+  ui_surface_white: "#FFFFFF",
+  
+  ui_surface_black: "#000000",
 
-  border: "#DDDEDF",
-  borderLight: "#ECECF2",
+  button_cream: "#FDF5E6", 
 
-  greenLight: "#E8F5E0",
-  greenMid: "#DCEFD0",
-  greenDark: "#5F8F36",
-
-  redLight: "#F8DEDF",
-  redMid: "#F3E5E6",
-  redDark: "#D46A73",
-
-  button: "#333638",
-  buttonText: "#FFFFFF",
-
-  gray100: "#F0F1F2",
-  gray200: "#D9DCDF",
-  gray300: "#C9CDD1",
-} as const
+  high_contrast: "#FFFFFF", 
+  mid_contrast: "#E0E0E0",  
+  low_contrast: "#415A77",  
+  
+  brand_primary: "#FDF5E6",
+  ui_surface: "#FFFFFF",
+  status_positive: "#10B981",
+  status_negative: "#F59E0B",
+} as const;

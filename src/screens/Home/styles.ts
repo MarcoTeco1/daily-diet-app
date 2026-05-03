@@ -6,148 +6,92 @@ type SummaryCardProps = {
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.ui_background};
 `;
 
-export const SummaryCard = styled.View<SummaryCardProps>`
-  padding: 56px 24px 28px;
-  align-items: center;
-  border-bottom-left-radius: ${({ theme }) => theme.radius.xxl};
-  border-bottom-right-radius: ${({ theme }) => theme.radius.xxl};
-
-  ${({ isPositive, theme }) =>
-    isPositive
-      ? css`
-          background-color: ${theme.colors.greenLight};
-        `
-      : css`
-          background-color: ${theme.colors.redLight};
-        `}
-`;
-
-export const SummaryValue = styled.Text`
-  font-size: 40px;
+// "Refeições" centralizado e branco
+export const Title = styled.Text`
+  font-size: ${({ theme }) => theme.font.size_lg}px;
   font-weight: 900;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-export const SummaryText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.md};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-top: 8px;
-  margin-bottom: 20px;
-`;
-
-export const SummaryButton = styled.TouchableOpacity`
-  min-width: 164px;
-  height: 42px;
-  border-radius: ${({ theme }) => theme.radius.pill};
-  padding: 0 18px;
-  align-items: center;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  margin-top: 8px;
-
-  shadow-color: #000;
-  shadow-opacity: 0.04;
-  shadow-radius: 8px;
-  elevation: 2;
-`;
-
-export const SummaryButtonText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.sm};
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme }) => theme.colors.high_contrast};
+  text-align: center;
+  margin: 30px 0 20px;
 `;
 
 export const Content = styled.View`
-  padding: 24px 24px 0;
+  padding: 0 ${({ theme }) => theme.tokens.padding}px;
 `;
 
-export const HeaderRow = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
-  margin-bottom: 16px;
-`;
-
-export const Title = styled.Text`
-  font-size: 26px;
-  font-weight: 900;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-export const ActionsRow = styled.View`
-  flex-direction: row;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.sm};
-`;
-
-export const FilterOpenButton = styled.TouchableOpacity`
-  height: 46px;
-  background-color: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.gray200};
-  border-radius: ${({ theme }) => theme.radius.md};
-  padding: 0 18px;
+export const SummaryCard = styled.View<SummaryCardProps>`
+  width: 100%;
+  padding: 40px 24px;
+  background-color: ${({ theme }) => theme.colors.ui_surface_white};
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
+`;
+
+export const SummaryValue = styled.Text`
+  font-size: ${({ theme }) => theme.font.size_xl}px;
+  font-weight: 900;
+  color: #000000; 
+`;
+
+export const SummaryText = styled.Text`
+  font-size: ${({ theme }) => theme.font.size_md}px;
+  color: #333333;
+  text-align: center;
+`;
+
+// Botões branco amarelados (Creme)
+export const FilterOpenButton = styled.TouchableOpacity`
+  background-color: ${({ theme }) => theme.colors.button_cream};
+  padding: 12px 20px;
+  border-radius: ${({ theme }) => theme.shaping.radius_sm}px;
 `;
 
 export const FilterOpenButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.text};
-  font-size: ${({ theme }) => theme.fontSize.md};
+  color: #000000;
   font-weight: 700;
 `;
 
 export const NewButton = styled.TouchableOpacity`
-  height: 46px;
-  background-color: ${({ theme }) => theme.colors.button};
-  border-radius: ${({ theme }) => theme.radius.md};
-  padding: 0 20px;
-  align-items: center;
-  justify-content: center;
-
-  shadow-color: #000;
-  shadow-opacity: 0.06;
-  shadow-radius: 8px;
-  elevation: 2;
+  background-color: ${({ theme }) => theme.colors.button_cream};
+  padding: 12px 24px;
+  border-radius: ${({ theme }) => theme.shaping.radius_sm}px;
 `;
 
 export const NewButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.buttonText};
-  font-size: ${({ theme }) => theme.fontSize.md};
-  font-weight: 700;
-`;
-
-export const SectionTitle = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  color: #000000;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 16px 24px 8px;
 `;
 
 export const EmptyContainer = styled.View`
-  margin: 12px 24px 0;
-  background-color: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.borderLight};
-  border-radius: ${({ theme }) => theme.radius.xxl};
-  padding: 32px 24px;
+  margin: 20px 24px;
+  padding: 40px;
+  background-color: ${({ theme }) => theme.colors.ui_surface_black};
+  border-radius: ${({ theme }) => theme.shaping.radius_lg}px;
   align-items: center;
+  border: 1px solid ${({ theme }) => theme.colors.low_contrast};
 `;
 
 export const EmptyTitle = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-size: ${({ theme }) => theme.font.size_md}px;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+  color: #FFFFFF;
   margin-bottom: 8px;
   text-align: center;
 `;
 
 export const EmptyText = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.md};
-  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: ${({ theme }) => theme.font.size_xs}px;
+  color: #FFFFFF;
   text-align: center;
-  line-height: 22px;
 `;
+
+export const HeaderRow = styled.View` flex-direction: row; align-items: center; justify-content: center; `;
+export const ActionsRow = styled.View` flex-direction: row; gap: 10px; margin-top: 10px; `;
+export const SummaryButton = styled.TouchableOpacity` margin-top: 15px; border: 1px solid #000; padding: 8px; border-radius: 8px; `;
+export const SummaryButtonText = styled.Text` font-weight: bold; color: #000; `;
+export const SectionTitle = styled.Text` color: white; font-weight: bold; margin: 24px 24px 10px; font-size: 18px; `;

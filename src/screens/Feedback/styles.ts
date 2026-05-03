@@ -6,10 +6,11 @@ type TitleProps = {
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
-  justify-content: space-between;
+  /* Atualizado para o seu azul escuro marinho */
+  background-color: ${({ theme }) => theme.colors.ui_background};
+  justify-content: center;
   align-items: center;
-  padding: 120px 24px 40px;
+  padding: 0 24px;
 `;
 
 export const Content = styled.View`
@@ -17,7 +18,8 @@ export const Content = styled.View`
 `;
 
 export const Title = styled.Text<TitleProps>`
-  font-size: ${({ theme }) => theme.fontSize.hero};
+  /* Atualizado para font.size_xl e adicionado px */
+  font-size: ${({ theme }) => theme.font.size_xl}px;
   font-weight: 900;
   text-align: center;
   margin-bottom: 12px;
@@ -25,37 +27,42 @@ export const Title = styled.Text<TitleProps>`
   ${({ isOnDiet, theme }) =>
     isOnDiet
       ? css`
-          color: ${theme.colors.greenDark};
+          color: ${theme.colors.status_positive};
         `
       : css`
-          color: ${theme.colors.redDark};
+          color: ${theme.colors.status_negative};
         `}
 `;
 
 export const Description = styled.Text`
-  font-size: ${({ theme }) => theme.fontSize.lg};
-  color: ${({ theme }) => theme.colors.textSecondary};
+  /* Atualizado para font.size_lg e mid_contrast (cinza claro) */
+  font-size: ${({ theme }) => theme.font.size_lg}px;
+  color: ${({ theme }) => theme.colors.mid_contrast};
   text-align: center;
-  line-height: 26px;
+  line-height: 32px;
   max-width: 300px;
 `;
 
 export const Bold = styled.Text`
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
+  /* Texto em branco para destacar no fundo azul */
+  color: ${({ theme }) => theme.colors.high_contrast};
 `;
 
 export const Button = styled.TouchableOpacity`
-  min-height: 54px;
+  min-height: 56px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.button};
-  border-radius: ${({ theme }) => theme.radius.lg};
+  /* Atualizado para a cor creme (branco amarelado) */
+  background-color: ${({ theme }) => theme.colors.button_cream};
+  border-radius: ${({ theme }) => theme.shaping.radius_sm}px;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
 `;
 
 export const ButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.buttonText};
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  /* Texto preto para contraste no botão creme */
+  color: #000000;
+  font-size: ${({ theme }) => theme.font.size_md}px;
   font-weight: 800;
 `;
